@@ -20,18 +20,12 @@ class Main {
 
             choice = Integer.parseInt(scan.nextLine());
 
-            // Placeholder for switch logic (to be added in future commits)
-
-        } while (choice != 8);
-
-                                switch (choice) {
-                case 1:
-                                switch (choice) {
+            switch (choice) {
                 case 1:
                     System.out.print("Enter Name: ");
                     String name = scan.nextLine();
                     System.out.print("Enter PRN: ");
-                    int prn = Integer.parseInt(scan.nextLine());
+                    int prn = Integer.parseInt(scan.nextLine()); // FIXED: Missing semicolon
                     System.out.print("Enter Branch: ");
                     String branch = scan.nextLine();
                     System.out.print("Enter Batch: ");
@@ -40,9 +34,7 @@ class Main {
                     float cgpa = Float.parseFloat(scan.nextLine());
 
                     operations.addStudent(new Student(name, prn, branch, batch, cgpa));
-                    break;
-            }
-
+                    break; // FIXED: Ensured break is properly placed
 
                 case 2:
                     operations.displayStudents();
@@ -57,8 +49,8 @@ class Main {
                     else
                         System.out.println("Student not found.");
                     break;
-            }
-        case 4:
+
+                case 4:
                     System.out.print("Enter Name to search: ");
                     name = scan.nextLine();
                     List<Student> studentsByName = operations.searchStudentByName(name);
@@ -105,16 +97,10 @@ class Main {
 
                 default:
                     System.out.println("Invalid choice! Please try again.");
-            }
-        } while (choice != 8);
+            } 
 
-        scan.close();
-    }
-}
+        } while (choice != 8); 
 
-
-
-
-        scan.close();
+        scan.close(); 
     }
 }
