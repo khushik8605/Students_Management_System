@@ -24,7 +24,9 @@ class Main {
 
         } while (choice != 8);
 
-                    switch (choice) {
+                                switch (choice) {
+                case 1:
+                                switch (choice) {
                 case 1:
                     System.out.print("Enter Name: ");
                     String name = scan.nextLine();
@@ -40,6 +42,23 @@ class Main {
                     operations.addStudent(new Student(name, prn, branch, batch, cgpa));
                     break;
             }
+
+
+                case 2:
+                    operations.displayStudents();
+                    break;
+
+                case 3:
+                    System.out.print("Enter PRN to search: ");
+                    prn = Integer.parseInt(scan.nextLine());
+                    Student student = operations.searchStudentByPRN(prn);
+                    if (student != null)
+                        student.display();
+                    else
+                        System.out.println("Student not found.");
+                    break;
+            }
+
 
 
         scan.close();
